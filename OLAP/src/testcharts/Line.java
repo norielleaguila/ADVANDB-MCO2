@@ -4,11 +4,15 @@ import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.Button;
+import javafx.scene.layout.VBox;
 
 public class Line{
 	
 	private final NumberAxis xAxis;
 	private final NumberAxis yAxis;
+	
+	private VBox layout;
 	
 	private Scene scene;
 	
@@ -44,7 +48,18 @@ public class Line{
 		
         lineChart.getData().add(series);
         
-        scene = new Scene(lineChart, 800, 600);
+        layout = new VBox(10);
+        
+        Button b = new Button("Run");
+        
+        b.setOnAction(e -> {
+            series.getData().add(new XYChart.Data(13, 10));
+        	
+        });
+        
+        layout.getChildren().addAll(lineChart, b);
+        
+        scene = new Scene(layout, 800, 600);
 		
 	}
 	

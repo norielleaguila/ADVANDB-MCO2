@@ -41,3 +41,6 @@
 *.history
 .metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt
 .metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
+*.launch
+.metadata/.plugins/org.eclipse.jdt.ui/jdt-images/0.png
+.recommenders/index/http___download_eclipse_org_recommenders_models_mars_/segments_1
