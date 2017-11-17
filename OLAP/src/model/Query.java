@@ -75,11 +75,32 @@ public class Query {
 	}
 	
 	/**
-	 * OLAP operation roll up. Reduces the number of times the data was grouped.
+	 * OLAP operation roll up. Reduces the number of times the data is grouped.
 	 * @param n number of times to roll up
 	 */
 	public void rollUp(int n){
+		for(int i = 0; i < n; i++)
+			from.remove(from.size());
 		
+		constructQuery();
+	}
+	
+	/**
+	 * OLAP operation drill down. Increases the number of times the data is grouped.
+	 * @param attrs attributes to group the data by
+	 */
+	public void drillDown(String[] attrs){
+		for(int i = 0; i < attrs.length; i++){
+			groupBy.add(attrs[i]);
+		}	
+		
+		constructQuery();
+	}
+	
+	public void slice(String attr, String filter){
+		if(where.contains(attr)){
+			
+		}
 	}
 	
 	public void addSelect(String a, int index){
