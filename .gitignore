@@ -39,3 +39,5 @@
 .metadata/.plugins/org.eclipse.epp.logging.aeri.ide/org.eclipse.epp.logging.aeri.ide.server/remote-history/segments_2
 .metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
 *.history
+.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt
+.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt
