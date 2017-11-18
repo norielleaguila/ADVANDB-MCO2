@@ -1,8 +1,11 @@
 package view;
 
+import java.util.ArrayList;
+import javafx.scene.control.*;
+
 public class OperationsScreen implements View{
 	
-	
+	private ArrayList<CheckBox>	rollUp;
 	
 	public OperationsScreen(){
 		
@@ -10,7 +13,7 @@ public class OperationsScreen implements View{
 
 	@Override
 	public void initElements() {
-		
+		initRollUp();
 	}
 
 	@Override
@@ -28,6 +31,10 @@ public class OperationsScreen implements View{
 		
 	}
 
-	
+	private void initRollUp(){
+		rollUp = new ArrayList<>();
+		
+		rollUp.add(new CheckBox());
+	}
 	
 }
