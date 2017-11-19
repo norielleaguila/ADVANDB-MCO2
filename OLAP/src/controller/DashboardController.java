@@ -16,15 +16,7 @@ public class DashboardController extends Controller{
 
 	@Override
 	public void setScene(int n) {
-		switch (n) {
-		case 0:
-			currentView = n;
-			break;
-			
-		default:
-			currentView = 0;
-		}
-	changeView ();
+		
 	}
 
 }

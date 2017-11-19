@@ -21,41 +21,65 @@ public class Line{
 		xAxis = new NumberAxis();
 		yAxis = new NumberAxis();
 		
-		xAxis.setLabel("Number of Month");
+		xAxis.setLabel("Year");
         //creating the chart
         final LineChart<Number,Number> lineChart = 
                 new LineChart<Number,Number>(xAxis,yAxis);
-                
-        lineChart.setTitle("Stock Monitoring, 2010");
         
         //defining a series
         XYChart.Series series = new XYChart.Series();
-        series.setName("My portfolio");
+        series.setName("Compensation %");
         //populating the series with data
         
-        series.getData().add(new XYChart.Data(1, 23));	// new XYChart.Data(xAxis, yAxis)
-        series.getData().add(new XYChart.Data(2, 14));
-        series.getData().add(new XYChart.Data(3, 15));
-        series.getData().add(new XYChart.Data(4, 24));
-        series.getData().add(new XYChart.Data(5, 34));
-        series.getData().add(new XYChart.Data(6, 36));
-        series.getData().add(new XYChart.Data(7, 22));
-        series.getData().add(new XYChart.Data(8, 45));
-        series.getData().add(new XYChart.Data(9, 43));
-        series.getData().add(new XYChart.Data(10, 17));
-        series.getData().add(new XYChart.Data(11, 29));
-        series.getData().add(new XYChart.Data(12, 25));
+        series.getData().add(new XYChart.Data(1998, 63.31));	// new XYChart.Data(xAxis, yAxis)
+        series.getData().add(new XYChart.Data(1999, 66.10));
+        series.getData().add(new XYChart.Data(2000, 71.71));
+        series.getData().add(new XYChart.Data(2001, 73.41));
+        series.getData().add(new XYChart.Data(2002, 74.49));
+        series.getData().add(new XYChart.Data(2003, 74.49));
+        series.getData().add(new XYChart.Data(2004, 74.49));
+        series.getData().add(new XYChart.Data(2005, 74.49));
+        series.getData().add(new XYChart.Data(2006, 70.97));
+        series.getData().add(new XYChart.Data(2007, 70.97));
+        series.getData().add(new XYChart.Data(2008, 71.71));
+        series.getData().add(new XYChart.Data(2009, 70.97));
+        series.getData().add(new XYChart.Data(2010, 70.97));
+        series.getData().add(new XYChart.Data(2011, 70.97));
+        series.getData().add(new XYChart.Data(2012, 71.71));
+        series.getData().add(new XYChart.Data(2013, 71.71));
+        series.getData().add(new XYChart.Data(2014, 74.51));
+        
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName("Teacher %");
+        
+        series2.getData().add(new XYChart.Data(1998, 31.94));	// new XYChart.Data(xAxis, yAxis)
+        series2.getData().add(new XYChart.Data(1999, 41.86));
+        series2.getData().add(new XYChart.Data(2000, 40.65));
+        series2.getData().add(new XYChart.Data(2001, 33.62));
+        series2.getData().add(new XYChart.Data(2002, 30.31));
+        series2.getData().add(new XYChart.Data(2003, 33.56));
+        series2.getData().add(new XYChart.Data(2004, 30.34));
+        series2.getData().add(new XYChart.Data(2005, 30.61));
+        series2.getData().add(new XYChart.Data(2006, 36.23));
+        series2.getData().add(new XYChart.Data(2007, 36.35));
+        series2.getData().add(new XYChart.Data(2008, 41.36));
+        series2.getData().add(new XYChart.Data(2009, 36.52));
+        series2.getData().add(new XYChart.Data(2010, 43.19));
+        series2.getData().add(new XYChart.Data(2011, 43.28));
+        series2.getData().add(new XYChart.Data(2012, 42.22));
+        series2.getData().add(new XYChart.Data(2013, 33.62));
+        series2.getData().add(new XYChart.Data(2014, 44.74));
+
 		
-        lineChart.getData().add(series);
+		xAxis.setAutoRanging(false);
+		xAxis.setLowerBound(1997);
+		xAxis.setUpperBound(2015);
+		
+        lineChart.getData().addAll(series, series2);
         
         layout = new VBox(10);
         
         Button b = new Button("Run");
-        
-        b.setOnAction(e -> {
-            series.getData().add(new XYChart.Data(13, 10));
-        	
-        });
         
         layout.getChildren().addAll(lineChart, b);
         

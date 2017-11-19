@@ -4,21 +4,19 @@ drop table if exists teacherf;
 
 create table teacherf
     (
-    countrykey varchar(3) not null, compensationkey int not null, yearkey varchar(6) not null,
-    femalepercentage double, malepercentage double, 
+    countrykey varchar(3) not null, compensationkey int not null,
+    totalpercentage double, femalepercentage double, malepercentage double, 
     primaryfpercentage double, secondaryfpercentage double, tertiaryfpercentage double,
     primarympercentage double, secondarympercentage double, tertiarympercentage double,
     
-        primary key (countrykey, compensationkey, yearkey),
+        primary key (countrykey, compensationkey),
         
         foreign key(countrykey) references countryd(countrykey),
-        foreign key(compensationkey) references compensationd(compensationkey),
-        foreign key(yearkey) references yeard(yearkey)
+        foreign key(compensationkey) references compensationd(compensationkey)
 	) 
 select 
 	countrycode as countrykey,
-    compensationkey as compensationkey,
-	substring(YearC, 7, 6) as yearkey
+    compensationkey as compensationkey
 from 
 	(((advandb_mco2_wdi.databyyear natural join advandb_mco2_wdi.country)
     natural join advandb_mco2_wdi.series)
@@ -27,4 +25,4 @@ from
 where
 	seriescode LIKE 'SE.%.TCHR.FE.ZS'
 group by
-	countrykey, yearkey;
+	countrykey;

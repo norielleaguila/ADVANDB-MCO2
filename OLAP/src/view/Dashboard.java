@@ -2,9 +2,10 @@ package view;
 
 import controller.DashboardController;
 import javafx.scene.Node;
+import javafx.scene.control.Tab;
 import javafx.scene.layout.FlowPane;
 
-public class Dashboard implements View{
+public class Dashboard extends Tab implements View{
 	private FlowPane layout;
 	private DashboardController controller;
 	

@@ -10,6 +10,8 @@ import javafx.stage.Stage;
 import view.View;
 
 public abstract class Controller {
+	protected static List<Controller> controllers = new ArrayList<>();
+	
 	protected Stage window;
 	protected Scene scene;
 	protected int currentView;
@@ -27,6 +29,7 @@ public abstract class Controller {
 		
 		setScene (0);
 		
+		addController(this);
 		stage.setScene (scene);
 		stage.show ();
 	}
@@ -36,10 +39,14 @@ public abstract class Controller {
 	public abstract void setScene (int n);
 	
 	protected void changeView () {
-		scene.setRoot ((Parent)views.get(currentView));
+		scene.setRoot ((Parent) views.get(currentView));
 	}
 	
 	public Stage getStage () {
 		return window;
+	}
+	
+	protected static void addController(Controller c){
+		controllers.add(c);
 	}
 }
